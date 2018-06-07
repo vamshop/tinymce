@@ -1,6 +1,6 @@
 {
-    "name": "your-name-here/Tinymce",
-    "description": "Tinymce plugin for CakePHP",
+    "name": "vamshop/tinymce",
+    "description": "Tinymce plugin for VamShop",
     "type": "cakephp-plugin",
     "license": "MIT",
     "require": {
