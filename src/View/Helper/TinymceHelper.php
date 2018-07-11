@@ -5,7 +5,7 @@ namespace Tinymce\View\Helper;
 use Cake\Core\App;
 use Cake\Core\Configure;
 use Cake\View\Helper;
-use Croogo\Core\Router;
+use Vamshop\Core\Router;
 
 /**
  * Tinymce Helper
@@ -66,7 +66,7 @@ class TinymceHelper extends Helper
                 $element = $actionItem['elements'];
                 unset($actionItem['elements']);
                 $config = empty($actionItem) ? '{}' : $this->Js->object($actionItem);
-                $out .= sprintf('Croogo.Wysiwyg.Ckeditor.setup("%s", %s);', $element, $config);
+                $out .= sprintf('Vamshop.Wysiwyg.Ckeditor.setup("%s", %s);', $element, $config);
             }
             $this->Html->scriptBlock($out, ['block' => 'scriptBottom']);
         }

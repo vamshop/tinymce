@@ -1,4 +1,4 @@
-Croogo.Wysiwyg.Ckeditor = {
+Vamshop.Wysiwyg.Ckeditor = {
 
 	presets: {
 
@@ -55,8 +55,8 @@ Croogo.Wysiwyg.Ckeditor = {
 	setup: function(el, config) {
 		var preset = null;
 		var defaults = {
-			filebrowserBrowseUrl: Croogo.Wysiwyg.attachmentsPath,
-			filebrowserImageBrowseUrl: Croogo.Wysiwyg.attachmentsPath
+			filebrowserBrowseUrl: Vamshop.Wysiwyg.attachmentsPath,
+			filebrowserImageBrowseUrl: Vamshop.Wysiwyg.attachmentsPath
 		};
 		if (config.preset === false) {
 			delete config.preset;
@@ -64,7 +64,7 @@ Croogo.Wysiwyg.Ckeditor = {
 			if (typeof config.preset == 'undefined') {
 				config.preset = 'standard';
 			}
-			preset = Croogo.Wysiwyg.Ckeditor.presets[config.preset];
+			preset = Vamshop.Wysiwyg.Ckeditor.presets[config.preset];
 		}
 		$.extend(defaults, preset);
 		$.extend(defaults, config);
@@ -81,7 +81,7 @@ Croogo.Wysiwyg.Ckeditor = {
 
 }
 
-Croogo.Wysiwyg.isDirty = function() {
+Vamshop.Wysiwyg.isDirty = function() {
 	for (var editor in CKEDITOR.instances) {
 		if (CKEDITOR.instances[editor].checkDirty()) {
 			return true;
@@ -90,13 +90,13 @@ Croogo.Wysiwyg.isDirty = function() {
 	return false;
 }
 
-Croogo.Wysiwyg.resetDirty = function() {
+Vamshop.Wysiwyg.resetDirty = function() {
 	for (var editor in CKEDITOR.instances) {
 		CKEDITOR.instances[editor].resetDirty();
 	}
 }
 
-Croogo.Wysiwyg.choose = function(url, title, description) {
+Vamshop.Wysiwyg.choose = function(url, title, description) {
 	var params = window.location.href.split('?')[1].split('&');
 	var paramsObj = {};
 	for (var i in params) {
@@ -108,7 +108,7 @@ Croogo.Wysiwyg.choose = function(url, title, description) {
 	}
 
 	if (typeof paramsObj['CKEditorFuncNum'] != 'undefined') {
-		window.top.opener.CKEDITOR.tools.callFunction(paramsObj['CKEditorFuncNum'], Croogo.Wysiwyg.uploadsPath + url);
+		window.top.opener.CKEDITOR.tools.callFunction(paramsObj['CKEditorFuncNum'], Vamshop.Wysiwyg.uploadsPath + url);
 		window.top.close();
 	}
 }

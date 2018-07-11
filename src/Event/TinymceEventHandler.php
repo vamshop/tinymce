@@ -4,7 +4,7 @@ namespace Tinymce\Event;
 
 use Cake\Core\Configure;
 use Cake\Event\EventListenerInterface;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 /**
  * Tinymce Event Handler
@@ -25,7 +25,7 @@ class TinymceEventHandler implements EventListenerInterface
     public function implementedEvents()
     {
         return [
-            'Croogo.bootstrapComplete' => [
+            'Vamshop.bootstrapComplete' => [
                 'callable' => 'onBootstrapComplete',
             ],
         ];
@@ -43,7 +43,7 @@ class TinymceEventHandler implements EventListenerInterface
             $action = base64_decode($action);
             $action = explode('/', $action);
             array_pop($action);
-            Croogo::hookHelper(implode('/', $action), 'Tinymce.Tinymce');
+            Vamshop::hookHelper(implode('/', $action), 'Tinymce.Tinymce');
         }
     }
 
