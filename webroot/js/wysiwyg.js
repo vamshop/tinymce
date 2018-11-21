@@ -75,7 +75,7 @@ Vamshop.Wysiwyg.Ckeditor = {
 		};
 		CKEDITOR.replace(el.get(0), config);
 		CKEDITOR.on('instanceLoaded', function(evt) {
-			CKEDITOR.skin.loadPart('croogo');
+			CKEDITOR.skin.loadPart('vamshop');
 		});
 	}
 
